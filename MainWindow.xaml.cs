@@ -1,24 +1,41 @@
-﻿using System.Text;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace codex_windows_desktop_client
+namespace codex_windows_desktop_client;
+
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    private readonly ObservableCollection<string> _messages = new();
+
+    public MainWindow()
     {
-        public MainWindow()
+        InitializeComponent();
+        ChatList.ItemsSource = _messages;
+    }
+
+    private void SendButton_Click(object sender, RoutedEventArgs e)
+    {
+        if (string.IsNullOrWhiteSpace(InputTextBox.Text))
+            return;
+
+        var userMessage = InputTextBox.Text.Trim();
+        _messages.Add($"User: {userMessage}");
+        InputTextBox.Clear();
+
+        // Dummy response from Codex
+        _messages.Add("Codex: This is a dummy response.");
+    }
+
+    private void BrowseButton_Click(object sender, RoutedEventArgs e)
+    {
+        using var dialog = new System.Windows.Forms.FolderBrowserDialog();
+        if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
         {
-            InitializeComponent();
+            ProjectPathTextBox.Text = dialog.SelectedPath;
         }
     }
 }
+
