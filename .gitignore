@@ -1,0 +1,74 @@
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer Packaging files
+*.wixpdb
+*.wixproj
+
+# JetBrains Rider files
+.idea/
+
+# Windows Installer XML (WiX) files
+*.wixproj
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ebug-x64/
+[Dd]ebug-x86/
+[Dd]Release/
+[Dd]ReleasePublic/
+[Dd]Release-x64/
+[Dd]Release-x86/
+[Dd]x64/
+[Dd]x86/
+
+# User-specific files
+.vs/
+.vs2019/
+.vs2022/
+
+# ASP.NET temporary files
+# Uncomment this line if you have ASP.NET projects
+bin/
+obj/
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# JetBrains Rider
+.idea/
+
+# NPM package
+node_modules/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows system files
+*.bak
+*.backup
+
+# Ignore all package directories
+packages/
